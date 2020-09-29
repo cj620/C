@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "u-navbar": "/uview-ui/components/u-navbar/u-navbar",
+    "u-search": "/uview-ui/components/u-search/u-search",
+    "u-swiper": "/uview-ui/components/u-swiper/u-swiper",
+    "icon-tab": "/components/iconTab/iconTab",
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "song-list": "/components/songList/songList",
+    "tab-box": "/pages/index/components/tabBox/tabBox"
+  }
+}
