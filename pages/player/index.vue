@@ -29,8 +29,12 @@
     	  </view>
     	</view>
     	<!-- 歌词海报 -->
-    	<view class="post">
-    	
+    	<view class="post f-center">
+    	<view class="">
+    		<view class="post-img" :style="{backgroundImage:`url(${songInfo.al.picUrl})`,backgroundSize:'cover'}">
+    			
+    		</view>
+    	</view>
     	</view>
     	<!-- 控制栏 -->
     	<view class="control">
@@ -43,13 +47,13 @@
     	</view>
 		<!-- 进度条 -->
 		<view class="progress">
-				<view>
+				<view class="left">
 					00:00
 				</view>
 				<view>
-					<u-slider v-model="value"></u-slider>
+					<u-slider v-model="value" block-width="20"/>
 				</view>
-				<view>
+				<view class="right">
 					00:00
 				</view>
 		</view>
@@ -57,15 +61,18 @@
 		<view class="control-btn">
 			<u-icon name="reload" size="60"></u-icon>
 			<u-icon name="rewind-left" size="60"></u-icon>
-			<u-icon name="play-circle" size="150"></u-icon>
+			<u-icon name="play-circle" size="150" @click="play"></u-icon>
 			<u-icon name="rewind-right" size="60"></u-icon>
 			<u-icon name="order" size="60"></u-icon>
 		</view>
     	</view>
     </view>
-    <!--      <audio :src="songUrl"
-             autoplay
-             controls></audio> -->
+         <audio :src="songUrl"
+             :autoplay="true"
+             controls v-show="false"
+			 ref="audio"
+			 ></audio>
+			 <!-- <audio :src="" :poster="" :name="" :author="" :action="" controls></audio> -->
   </view>
 </template>
 
@@ -113,7 +120,19 @@ export default {
       api.getMusicLyric(this.musicId).then(res => {
         // this.lyric = res.lrc.lyric        
       })
-    }
+    },
+	play(){
+		console.log()
+		this.$nextTick(()=>{
+			// console.log(this.$refs.audio.$refs.audio.src)
+			// this.$refs.audio.$refs.audio
+			// this.$refs.audio.$refs.audio.src=this.songUrl
+			// console.log(this.$refs.audio.$refs.audio.src)
+		})
+		// console.log(uni.createSelectorQuery().in(this).select("#audio"))
+		// uni.createSelectorQuery().in(this).select("#audio")._component.play()
+		
+	}
 
   },
   mounted () {
@@ -167,6 +186,11 @@ export default {
 .post{
 	width: 100%;
 	height: 1000rpx;
+	.post-img{
+		width: 500rpx;
+		height: 500rpx;
+		border-radius: 50%;
+	}
 }
 .control{
 	width: 100%;
@@ -181,8 +205,20 @@ export default {
 		justify-content: space-around;
 	}
 	.progress{	
-		display: flex;
 		padding: 0 125rpx 0 125rpx;
+		// height: 50rpx;
+		position: relative;
+		.left{
+			position: absolute;
+			left: 20rpx;
+			top: -16rpx;
+			display: flex;
+		}
+		.right{
+			position: absolute;
+			right: 20rpx;
+			top: -16rpx;
+		}
 	}
 	.control-btn{
 		display: flex;
