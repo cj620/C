@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/**
+ * 下方引入的为uView UI的集成样式文件，为scss预处理器，其中包含了一些"u-"开头的自定义变量
+ * uView自定义的css类名和scss变量，均以"u-"开头，不会造成冲突，请放心使用 
+ */
+.f-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.bg-img {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: -50px;
+  height: 100%;
+  background-color: #161824;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+  z-index: -100;
+  -webkit-filter: blur(16px) brightness(50%);
+          filter: blur(16px) brightness(50%);
+}
+.head {
+  position: fixed;
+  width: 750rpx;
+  margin-top: 20rpx;
+  padding: 0 10rpx 0 10rpx;
+  top: 0;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.head .songer {
+  font-size: 20rpx;
+  height: 50rpx;
+}
+

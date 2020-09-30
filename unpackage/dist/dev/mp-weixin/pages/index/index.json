@@ -6,6 +6,7 @@
     "icon-tab": "/components/iconTab/iconTab",
     "u-button": "/uview-ui/components/u-button/u-button",
     "song-list": "/components/songList/songList",
-    "tab-box": "/pages/index/components/tabBox/tabBox"
+    "tab-box": "/pages/index/components/tabBox/tabBox",
+    "song-cell": "/components/songCell/songCell"
   }
 }

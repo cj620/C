@@ -81,6 +81,14 @@ class recommend extends HTTP {
       data: { id }
     });
   }
+  
+  // 获取音乐详情
+  getMusicDetail(id) {
+    return this.request({
+      url: '/song/detail',
+      data: { ids: id }
+    })
+  }
 
 }
 export {

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "tab-box": "/pages/index/components/tabBox/tabBox"
+  }
+}

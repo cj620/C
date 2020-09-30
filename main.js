@@ -11,7 +11,12 @@ Vue.use(uView);
 //挂载vuex
 import store from './store'
 Vue.prototype.$store = store
-
+// 全局变量：用于存储设备屏幕大小
+let globalData = {}
+Vue.prototype.$globalData = globalData
+// 全局变量：存储当前设备环境变量 {android：'安卓',ios:'苹果',devtools:'百度、微信和支付宝小程序'}
+let system = uni.getSystemInfoSync().platform
+Vue.prototype.$system = system
 const app = new Vue({
   ...App
 })

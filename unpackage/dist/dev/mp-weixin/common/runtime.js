@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/iconTab/iconTab":1,"components/songCell/songCell":1,"components/songList/songList":1,"uview-ui/components/u-button/u-button":1,"uview-ui/components/u-navbar/u-navbar":1,"uview-ui/components/u-search/u-search":1,"uview-ui/components/u-swiper/u-swiper":1,"uview-ui/components/u-link/u-link":1,"uview-ui/components/u-icon/u-icon":1};
+/******/ 		var cssChunks = {"components/iconTab/iconTab":1,"components/songList/songList":1,"uview-ui/components/u-button/u-button":1,"uview-ui/components/u-navbar/u-navbar":1,"uview-ui/components/u-search/u-search":1,"uview-ui/components/u-swiper/u-swiper":1,"uview-ui/components/u-link/u-link":1,"components/songCell/songCell":1,"uview-ui/components/u-icon/u-icon":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/iconTab/iconTab":"components/iconTab/iconTab","components/songCell/songCell":"components/songCell/songCell","components/songList/songList":"components/songList/songList","uview-ui/components/u-button/u-button":"uview-ui/components/u-button/u-button","uview-ui/components/u-navbar/u-navbar":"uview-ui/components/u-navbar/u-navbar","uview-ui/components/u-search/u-search":"uview-ui/components/u-search/u-search","uview-ui/components/u-swiper/u-swiper":"uview-ui/components/u-swiper/u-swiper","uview-ui/components/u-link/u-link":"uview-ui/components/u-link/u-link","uview-ui/components/u-icon/u-icon":"uview-ui/components/u-icon/u-icon"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/iconTab/iconTab":"components/iconTab/iconTab","components/songList/songList":"components/songList/songList","uview-ui/components/u-button/u-button":"uview-ui/components/u-button/u-button","uview-ui/components/u-navbar/u-navbar":"uview-ui/components/u-navbar/u-navbar","uview-ui/components/u-search/u-search":"uview-ui/components/u-search/u-search","uview-ui/components/u-swiper/u-swiper":"uview-ui/components/u-swiper/u-swiper","uview-ui/components/u-link/u-link":"uview-ui/components/u-link/u-link","components/songCell/songCell":"components/songCell/songCell","uview-ui/components/u-icon/u-icon":"uview-ui/components/u-icon/u-icon"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
