@@ -8,8 +8,11 @@ App.mpType = 'app'
 // 引入全局uView
 import uView from 'uview-ui'
 Vue.use(uView);
+//挂载vuex
+import store from './store'
+Vue.prototype.$store = store
 
 const app = new Vue({
-    ...App
+  ...App
 })
 app.$mount()

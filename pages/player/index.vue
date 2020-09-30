@@ -1,16 +1,7 @@
 <template>
 	<view>
-		<u-navbar :is-back="false" :background="{background: '#d64139'}" :border-bottom="false">
-					<view class="slot-wrap search-line">
-						       <u-search placeholder="搜索"
-						                  input-align="center"
-						                  :show-action="false"
-										  height="50"
-										  :style="{width:'550rpx'}"></u-search>
-					</view>
-				</u-navbar>
-				<audio :src="songUrl"  controls></audio>
-				
+    <audio :src="songUrl" autoplay controls></audio>
+		<!-- 头部 -->
 	</view>
 </template>
 
@@ -20,12 +11,10 @@
 	export default {
 		data() {
 			return {
-				songId:'',
 				songUrl:''
 			};
 		},
-		onLoad(options) {
-			this.songId=options.songId
+		created() {
 			this.init()
 		},
 		methods:{
@@ -33,8 +22,9 @@
 				this.getSongUrl()
 			},
 			getSongUrl(){
-				api.getSongUrl(this.songId).then(res=>{
+				api.getSongUrl(this.$store.state.songsListIds[0]).then(res=>{
 					this.songUrl=res.data[0].url
+					console.log(this.songUrl)
 				})
 			}
 			
