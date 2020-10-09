@@ -119,7 +119,7 @@ export default {
 	  },
 	  getBanners(){
 		api.getBanners(2).then(res=>{
-				  console.log(res.banners)
+				  // console.log(res.banners)
 				  res.banners.map(x=>{
 					 this.bannerList.push(x.pic)
 				  })
@@ -135,7 +135,7 @@ export default {
 							 return x.id
 						 })
 						 api.getTrack(ids.slice(0,12)).then(res=>{
-							 console.log(res.songs)
+							 // console.log(res.songs)
 							 this.osongs = res.songs
 						 })
 					 })

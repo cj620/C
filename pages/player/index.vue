@@ -51,7 +51,7 @@
 					00:00
 				</view>
 				<view>
-					<u-slider v-model="value" block-width="20"/>
+					<u-slider  block-width="20"/>
 				</view>
 				<view class="right">
 					00:00
@@ -67,10 +67,10 @@
 		</view>
     	</view>
     </view>
-         <audio :src="songUrl"
+        <audio :src="songUrl"
              :autoplay="true"
              controls v-show="false"
-			 ref="audio"
+			 id="audio"
 			 ></audio>
 			 <!-- <audio :src="" :poster="" :name="" :author="" :action="" controls></audio> -->
   </view>
@@ -93,8 +93,10 @@ export default {
 	  screenHeight:0
     };
   },
-  created () {
-    this.init()
+  async created () {
+    await this.init()
+	// console.log(this.songUrl)
+	this.play()
   },
   methods: {
     init () {
@@ -122,15 +124,6 @@ export default {
       })
     },
 	play(){
-		console.log()
-		this.$nextTick(()=>{
-			// console.log(this.$refs.audio.$refs.audio.src)
-			// this.$refs.audio.$refs.audio
-			// this.$refs.audio.$refs.audio.src=this.songUrl
-			// console.log(this.$refs.audio.$refs.audio.src)
-		})
-		// console.log(uni.createSelectorQuery().in(this).select("#audio"))
-		// uni.createSelectorQuery().in(this).select("#audio")._component.play()
 		
 	}
 
@@ -140,7 +133,7 @@ export default {
     this.IsApp = !this.$system === 'devtools'
 	this.screenHeight =750 / uni.getSystemInfoSync().windowWidth*(uni.getSystemInfoSync().windowHeight)
     // 获取功能栏上边距
-	console.log(this.screenHeight)
+	// console.log(this.screenHeight)
     // this.navbarTop = 750 / uni.getSystemInfoSync().windowWidth * this.$globalData.StatusBar
     // this.chartsSize = 750 / uni.getSystemInfoSync().windowWidth * (uni.getSystemInfoSync().windowHeight - 50)
 
