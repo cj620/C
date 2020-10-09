@@ -71,6 +71,7 @@
              :autoplay="true"
              controls v-show="false"
 			 id="audio"
+			 ref="audio"
 			 ></audio>
 			 <!-- <audio :src="" :poster="" :name="" :author="" :action="" controls></audio> -->
   </view>
@@ -93,10 +94,8 @@ export default {
 	  screenHeight:0
     };
   },
-  async created () {
-    await this.init()
-	// console.log(this.songUrl)
-	this.play()
+ created () {
+this.init()
   },
   methods: {
     init () {
@@ -112,10 +111,7 @@ export default {
 
     getMusicDetail () {
       api.getMusicDetail(this.$store.state.songsListIds[0]).then(res => {
-        // this.songInfo = res.songs[0].al; 
-        // console.log(res.songs[0].al)
         this.songInfo = res.songs[0]
-        // console.log(res.songs[0])
       })
     },
     getMusicLyric () {
@@ -125,6 +121,13 @@ export default {
     },
 	play(){
 		
+  let view = uni.createSelectorQuery().select('#audio')
+  view.fields({
+  			context: true
+  		},
+  	    data => {
+			console.log(data)
+  }).exec();
 	}
 
   },
